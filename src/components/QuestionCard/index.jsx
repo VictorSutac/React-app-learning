@@ -1,1 +1,1 @@
-import {QuestionCard} from "./QuestionCard";
+export {QuestionCard} from "./QuestionCard";
