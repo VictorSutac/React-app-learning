@@ -1,6 +1,6 @@
 import cls from "./SearchImport.module.css";
 import { useId } from "react";
-import { SearchIcon } from "../Icons";
+import { SearchIcon } from "../icons";
 
 export const SearchImport = ({ value, onChange }) => {
   const inputId = useId();

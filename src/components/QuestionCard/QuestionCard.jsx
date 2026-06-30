@@ -5,19 +5,19 @@ import { Badge } from "../Badge";
 export const QuestionCard = ({card}) => {
 const navigate = useNavigate();
 const levelVariant = card.level === 1 ? "primary" : card.level === 2 ? "warning" : "success";
-const completedVariant = card.comleted ? "success" : "primary";
+const completedVariant = card.completed ? "success" : "primary";
 
   return (
     <div className={cls.card}>
       <div className={cls.cardLables}>
         <Badge variant={levelVariant}>Level: {card.level}</Badge>
-        <Badge variant={completedVariant}>{card.comleted ? "Completed" : "Not completed"}</Badge>
-      </div>
+        <Badge variant={completedVariant}>{card.completed ? "Completed" : "Not completed"}</Badge>
+      </div> 
 
       <h5 className={cls.cardTitle}>{card.question}</h5>
 
       <div className={cls.cardAnswers}>
-        <label>short aswer</label>
+        <label>short answer</label>
         <p className={cls.cardAnswer}>
           {card.answer}
         </p>
