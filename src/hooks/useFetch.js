@@ -2,8 +2,9 @@ import { useState } from "react";
 import { delayFn } from "../helper/delayFn";
 
 export const useFetch = (callback) => {
-  const [isLoader, setIsLoader] = useState([]);
+  const [isLoader, setIsLoader] = useState(false);
   const [error, setError] = useState("");
+
 
   const fetchFn = async (arg) => {
     try {
