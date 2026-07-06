@@ -20,6 +20,10 @@ export const QuestionPage = () => {
 
   const [fetchCard, isCardLoading] = useFetch(async () => {
     const response = await fetch(`${API_URL}/react/${id}`);
+    if (!response.ok) {
+      throw new Error("Card not found");
+    }
+
     const data = await response.json();
 
     setCard(data);
