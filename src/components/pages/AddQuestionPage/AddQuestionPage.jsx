@@ -4,7 +4,7 @@ import { delayFn } from "../../../helper/delayFn";
 import cls from "./AddQuestionPage.module.css";
 import { Button } from "../../Button";
 import { API_URL } from "../../../constants";
-
+import { Loader } from "../../Loader";
 const createCardAction = async (_prevState, formData) => {
   try {
     await delayFn();
@@ -35,15 +35,17 @@ const createCardAction = async (_prevState, formData) => {
     return isClearForm ? {} : question;
   } catch (error) {
     toast.error(error.message);
-    return{};
+    return {};
   }
 };
-export const AddQuestionPage = () => {
+const AddQuestionPage = () => {
   const [formState, formAction, isPending] = useActionState(createCardAction, {
     clearForm: true,
   });
   return (
     <>
+      {isPending && <Loader />}
+
       <h1 className={cls.formTitle}>Add new question</h1>
 
       <div className={cls.formContainer}>
@@ -92,7 +94,6 @@ export const AddQuestionPage = () => {
               id="resourcesField"
               cols="30"
               rows="2"
-              required
               placeholder="please enter resources separated by commas"
             />
           </div>
@@ -121,6 +122,10 @@ export const AddQuestionPage = () => {
           <Button isDisable={isPending}>Add question</Button>
         </form>
       </div>
+
     </>
   );
 };
+
+
+export default AddQuestionPage;
