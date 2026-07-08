@@ -5,7 +5,6 @@ import { API_URL } from "../../../constants";
 import { Loader } from "../../Loader";
 import { EditQuestion } from "../../pages/EditQuestionPage/EditQuestion";
 export const EditQuestionPage = () => {
-
   const { id } = useParams();
   const [question, setQuestion] = useState(null);
 
@@ -27,4 +26,3 @@ export const EditQuestionPage = () => {
     </>
   );
 };
- 

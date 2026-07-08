@@ -557,25 +557,13 @@
       "completed": false
     },
     {
-      "id": "e5c9",
+      "id": "51",
       "question": "Ты крут в React?",
       "answer": "🍏 канэшна 🍏",
       "description": "Потому что React мне очень нравится и я уже много с ним практикуюсь",
       "resources": [],
       "level": 1,
       "completed": false
-    },
-    {
-      "question": "12355555555",
-      "answer": "55555555",
-      "description": "123",
-      "resources": [
-        "1233313"
-      ],
-      "level": 1,
-      "completed": false,
-      "id": "Y1qwgExoweE",
-      "editDate": "08.07.2026, 12:23"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
