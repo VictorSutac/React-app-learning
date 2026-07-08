@@ -3,17 +3,22 @@ import { Button } from "../Button";
 
 export const QuestionForm = ({
   formAction,
-  state,
+  formState,
   isPending,
   submitBtnText,
 }) => {
-    console.log(state.resources);
   return (
     <form action={formAction} className={cls.form}>
+      <input
+        type="text"
+        name="questionId"
+        defaultValue={formState.id}
+        hidden
+      />
       <div className={cls.formControl}>
         <label htmlFor="questionField">Question:</label>
         <textarea
-          defaultValue={state.question}
+          defaultValue={formState.question}
           name="question"
           id="questionField"
           cols="30"
@@ -25,7 +30,7 @@ export const QuestionForm = ({
       <div className={cls.formControl}>
         <label htmlFor="shortAnswerField">Short Answer:</label>
         <textarea
-          defaultValue={state.answer}
+          defaultValue={formState.answer}
           name="answer"
           id="shortAnswerField"
           cols="30"
@@ -37,7 +42,7 @@ export const QuestionForm = ({
       <div className={cls.formControl}>
         <label htmlFor="descriptionField">Description:</label>
         <textarea
-          defaultValue={state.description}
+          defaultValue={formState.description}
           name="description"
           id="descriptionField"
           cols="30"
@@ -49,7 +54,7 @@ export const QuestionForm = ({
       <div className={cls.formControl}>
         <label htmlFor="resourcesField">Resources:</label>
         <textarea
-          defaultValue={state.resources}
+          defaultValue={formState.resources}
           name="resources"
           id="resourcesField"
           cols="30"
@@ -60,7 +65,7 @@ export const QuestionForm = ({
 
       <div className={cls.formControl}>
         <label htmlFor="levelField">Level:</label>
-        <select name="level" id="levelField" defaultValue={state.level}>
+        <select name="level" id="levelField" defaultValue={formState.level}>
           <option disabled>Question level</option>
           <hr />
           <option value="1">1 - easy</option>
@@ -75,7 +80,7 @@ export const QuestionForm = ({
           type="checkbox"
           name="clearForm"
           id="clearFormField"
-          defaultChecked={state.clearForm}
+          defaultChecked={formState.clearForm}
         />
         <span>Clear form after submission?</span>
       </label>
