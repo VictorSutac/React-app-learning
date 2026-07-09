@@ -3,7 +3,7 @@ import { useTheme } from "../../hooks/useTheme";
 import { THEME_STORAGE } from "../../constants";
 
 export const ThemeToggler = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme(); 
 
   const onChangeHandler = (e) => {
     const isChecked = e.target.checked === true;

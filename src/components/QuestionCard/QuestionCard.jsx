@@ -11,7 +11,7 @@ const completedVariant = card.completed ? "success" : "primary";
     <div className={cls.card}>
       <div className={cls.cardLables}>
         <Badge variant={levelVariant}>Level: {card.level}</Badge>
-        <Badge variant={completedVariant}>{card.completed ? "Completed" : "Not covmpleted"}</Badge>
+        <Badge variant={completedVariant}>{card.completed ? "Completed" : "Not completed"}</Badge>
       </div> 
 
       <h5 className={cls.cardTitle}>{card.question}</h5>

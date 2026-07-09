@@ -11,9 +11,13 @@ export const ThemeProvider = ({ children }) => {
       const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       if (isDark) {
         setTheme("dark");
-        document.body.classList.remove("darkLayout");
+        document.body.classList.add("darkLayout"); // добавляем, а не удаляем
       } else {
-        savedTheme === "dark" && document.body.classList.add("darkLayout");
+        if (savedTheme === "dark") {
+          document.body.classList.add("darkLayout");
+        } else {
+          document.body.classList.remove("darkLayout"); // явно убираем, иначе класс может "залипнуть"
+        }
         setTheme(savedTheme);
       }
     };
